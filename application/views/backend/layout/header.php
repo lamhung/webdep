@@ -50,7 +50,7 @@
                         <li class="active dropdown">
                             <a href="" data-toggle = 'dropdown'><span class="glyphicon glyphicon-user">&nbsp;</span>User<span class="caret">&nbsp;</span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Thêm User</a></li>
+                                <li><a href="<?php echo base_url('acp/user/add');?>">Thêm User</a></li>
                                 <li><a href="#">Danh Sách User</a></li>
                             </ul>
                         </li>

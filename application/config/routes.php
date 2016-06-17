@@ -7,6 +7,7 @@ $route['acp'] = 'backend/home';
 //User
 $route['acp/user'] = 'backend/user';
 $route['acp/user/add'] = 'backend/user/add';
+$route['acp/user/show/(:num)'] = 'backend/user/show/$1';
 
 
 
