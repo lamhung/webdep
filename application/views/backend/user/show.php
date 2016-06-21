@@ -58,7 +58,7 @@
 <div class="row">
     <div class="col-md-offset-5">
         <a href="<?php echo base_url('acp/user');?>" class="btn btn-info active"><?php echo $this->lang->line('btn_back')?></a>
-        <a href="<?php echo base_url('acp/user/edit');?>" class="btn btn-primary btn-md"><?php echo $this->lang->line('btn_edit')?></a>
-        <a href="<?php echo base_url('acp/user/delete');?>" class="btn btn-danger btn-md"><?php echo $this->lang->line('btn_delete')?></a>
+        <a href="<?php echo base_url('acp/user/edit/'.$row['id']);?>" class="btn btn-warning btn-md"><?php echo $this->lang->line('btn_edit')?></a>
+        <a href="<?php echo base_url('acp/user/delete/'.$row['id']);?>" class="btn btn-danger btn-md" onclick="return confirm('Are you sure?');"><?php echo $this->lang->line('btn_delete')?></a>
     </div>
 </div>

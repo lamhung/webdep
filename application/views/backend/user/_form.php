@@ -33,10 +33,10 @@
                 <label class="col-md-3 control-label" for="group"><?php echo $this->lang->line('user_group');?> :</label>
                 <div class="col-md-6">
                     <label class="radio-inline">
-                        <input type="radio" name="groups" value="1" <?php echo set_radio('group',1, $row['group'] ==1);?>><?php echo $this->lang->line('user_group_1'); ?>
+                        <input type="radio" name="groups" value="1" <?php echo set_radio('group',1, $row['groups'] ==1);?>><?php echo $this->lang->line('user_group_1'); ?>
                     </label>
                     <label class="radio-inline">
-                        <input type="radio" name="groups" value="0" <?php echo set_radio('group',0, $row['group'] ==0);?>><?php echo $this->lang->line('user_group_0'); ?>
+                        <input type="radio" name="groups" value="0" <?php echo set_radio('group',0, $row['groups'] ==0);?>><?php echo $this->lang->line('user_group_0'); ?>
                     </label>
                 </div>
             </div>
@@ -106,7 +106,7 @@
             
             <div class="form-group">
                 <div class="col-md-offset-3 col-md-9">    
-                    <button type="submit" name="submit" value="submit" class="btn btn-danger"><?php echo $this->lang->line('btn_add');?></button>
+                    <button type="submit" name="submit" value="submit" class="btn btn-danger"><?php echo $this->lang->line('btn_save');?></button>
                     <input type="hidden" name="<?php echo  $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash();?>" />
                 </div>
             </div>

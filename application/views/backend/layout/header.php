@@ -12,6 +12,9 @@
         <script src="<?php echo base_url('vendor/bootstrap/js/bootstrap.min.js'); ?>"></script>
     </head>
     <body>
+        <?php 
+            $user_login = $this->session->userdata('user_login'); 
+        ?>
         <div class="header navbar-inverse">
             <nav class="navbar" style = "margin-bottom : 0px">
                 <div class="navbar-header">
@@ -25,11 +28,11 @@
                 </div>
                 <div class="navbar-collapse collapse " id="header_top">
                     <ul class="nav navbar-nav navbar-right nav_top">
-                        <li><a href=""><span class="icons_welcome"></span>Xin Chào: Anh</a></li>
+                        <li><a href=""><span class="icons_welcome"></span>Xin Chào: <?php echo $user_login['fullname'];?></a></li>
                         <li><a href=""><span class="icons_user_info"></span>Cập Nhật Thông Tin Cá Nhân</a></li>
                         <li><a href=""><span class="icons_vietnam"></span>Tiếng Việt</a></li>
                         <li><a href=""><span class="icons_english"></span>English</a></li>
-                        <li><a href=""><span class="icons_exit"></span>Thoát</a></li>
+                        <li><a href="<?php echo base_url('acp/logout');?>"><span class="icons_exit"></span>Thoát</a></li>
                     </ul>
                 </div>
             </nav>
@@ -48,10 +51,10 @@
                 <div class="navbar-collapse collapse" id="menu">
                     <ul class="nav navbar-nav nav_menu">
                         <li class="active dropdown">
-                            <a href="" data-toggle = 'dropdown'><span class="glyphicon glyphicon-user">&nbsp;</span>User<span class="caret">&nbsp;</span></a>
+                            <a href="<?php echo base_url('acp/user');?>" data-toggle = 'dropdown'><span class="glyphicon glyphicon-user">&nbsp;</span>User<span class="caret">&nbsp;</span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="<?php echo base_url('acp/user/add');?>">Thêm User</a></li>
-                                <li><a href="#">Danh Sách User</a></li>
+                                <li><a href="<?php echo base_url('acp/user/add');?>"><?php echo $this->lang->line('user_add');?></a></li>
+                                <li><a href="<?php echo base_url('acp/user');?>"><?php echo $this->lang->line('user_list');?></a></li>
                             </ul>
                         </li>
                         <li><a href=""><span class="glyphicon glyphicon-blackboard">&nbsp;</span>Banner</a></li>
