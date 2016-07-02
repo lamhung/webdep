@@ -13,7 +13,7 @@
     <div class="table-responsive col-md-12">
         <table class="table table-striped table-bordered">
             <thead>
-                <tr>
+                <tr class="success">
                     <th><?php echo $this->lang->line('STT');?></th>
                     <th><?php echo $this->lang->line('user_fullname');?></th>
                     <th><?php echo $this->lang->line('user_username');?></th>

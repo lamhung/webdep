@@ -68,7 +68,6 @@ class Image_mylib {
         if (!directory_exist($directory . '/thumbnail')) {
             create_directory($directory . '/thumbnail');
         }
-
         $image_src = UPLOADPATH . $directory . '/' . $image['file_name'];
         $image_dest = UPLOADPATH . $directory . '/thumbnail/' . $image['file_name'];
 
