@@ -67,7 +67,13 @@
                                 <li><a href="<?php echo base_url('acp/banner');?>"><?php echo $this->lang->line('banner_list');?></a></li>
                             </ul>
                         </li>
-                        <li><a href="">Product</a></li>
+                        <li>
+                            <a href="<?php echo base_url('acp/product');?>" data-toggle = 'dropdown'><span class="glyphicon glyphicon-folder-close">&nbsp;</span>Product<span class="caret">&nbsp;</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<?php echo base_url('acp/category');?>"><?php echo $this->lang->line('category');?></a></li>
+                            </ul>
+                        
+                        </li>
                         <li>
                             <a href="<?php echo base_url('acp/news');?>" data-toggle = 'dropdown'><span class="glyphicon glyphicon-globe">&nbsp;</span>News<span class="caret">&nbsp;</span></a>
                             <ul class="dropdown-menu">

@@ -7,7 +7,6 @@ class User extends MY_Controller {
     public function __construct() {
         parent::__construct();
         $this->data['per_page'] = 25;
-        $this->data['limit_short'] = 13;
     }
     public function index() {
         //Get config for pagination

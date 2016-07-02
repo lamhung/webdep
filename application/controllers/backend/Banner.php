@@ -7,7 +7,6 @@ class Banner extends MY_Controller {
     public function __construct() {
         parent::__construct();
         $this->data['per_page'] = 10;
-        $this->data['limit_short'] = 13;
     }
     
     public function index() {
