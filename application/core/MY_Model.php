@@ -204,5 +204,15 @@ class MY_Model extends CI_Model {
 
         return $this->db->delete($this->table);
     }
+    
+    /**
+     * Get Next ID
+     * @return number
+     */
+    public function next_id() {
+        $query = $this->db->query("SELECT Auto_increment FROM information_schema.tables WHERE table_name = '".$this->table."'");
+        $row = $query->row_array();
+        return $row['Auto_increment'];
+    }
 
 }

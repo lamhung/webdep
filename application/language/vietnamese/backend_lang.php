@@ -111,6 +111,7 @@ $lang['news_has_been_created'] = 'Tin tức đã được tạo!';
 $lang['news_not_exist'] = 'Tin tức không tồn tại trong hệ thống!';
 
 //Category
+$lang['category'] = 'Danh Mục';
 $lang['category_id'] = 'ID Category';
 $lang['category_name'] = 'Tiêu đề';
 $lang['category_url'] = 'Url';
