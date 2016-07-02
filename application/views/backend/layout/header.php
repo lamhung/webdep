@@ -49,7 +49,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="" class="navbar-brand home"><span class="glyphicon glyphicon-home" style="font-size: 20px;"></span></a>
+                    <a href="<?php echo base_url('acp');?>" class="navbar-brand home"><span class="glyphicon glyphicon-home" style="font-size: 20px;"></span></a>
                 </div>
                 <div class="navbar-collapse collapse" id="menu">
                     <ul class="nav navbar-nav nav_menu">
@@ -70,7 +70,9 @@
                         <li>
                             <a href="<?php echo base_url('acp/product');?>" data-toggle = 'dropdown'><span class="glyphicon glyphicon-folder-close">&nbsp;</span>Product<span class="caret">&nbsp;</span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="<?php echo base_url('acp/category');?>"><?php echo $this->lang->line('category');?></a></li>
+                                <li>
+                                    <a href="<?php echo base_url('acp/category');?>"><?php echo $this->lang->line('category');?></a>
+                                </li>
                             </ul>
                         
                         </li>
@@ -98,4 +100,5 @@
         <!-- ///////////////////////////////////////////////// BEGIN MODUEL ///////////////////////////////////////////////////////////////////////-->
         <div class="container-fluid">
             <div class="wrapper">
+                <?php $this->load->view('backend/layout/_flash');?>
 
