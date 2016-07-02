@@ -93,6 +93,7 @@ class User extends MY_Controller {
                     $result =$this->user_model->insert($post);
                     if($result)
                     {
+                        $this->session->set_flashdata('msg_success', $this->lang->line('user_has_been_created'));
                         $user_id = $this->user_model->insert_id();
                         redirect(base_url('acp/user/show/'.$user_id));
                     }
@@ -110,6 +111,7 @@ class User extends MY_Controller {
         $result = $this->user_model->get_by($id);
         if(!$result)
         {
+            $this->session->set_flashdata('msg_error', $this->lang->line('user_not_exist'));
             redirect(base_url('acp/user'));
         }
         $this->data['row'] = $this->user_model->convert_data($result);
@@ -123,6 +125,7 @@ class User extends MY_Controller {
         $user = $this->user_model->get_by($id);
         if(!$user)
         {
+            $this->session->set_flashdata('msg_error', $this->lang->line('user_not_exist'));
             redirect(base_url('acp/user'));
         }
         if($this->input->post('submit')) {
@@ -163,6 +166,7 @@ class User extends MY_Controller {
                     $result =$this->user_model->update($post);
                     if($result)
                     {
+                        $this->session->set_flashdata('msg_success', $this->lang->line('user_has_been_updated'));
                         redirect(base_url('acp/user/show/'.$id));
                     }
                 }
@@ -180,10 +184,12 @@ class User extends MY_Controller {
         $user = $this->user_model->get_by($id);
         if(!$user)
         {
+            $this->session->set_flashdata('msg_error', $this->lang->line('user_not_exist'));
             redirect(base_url('acp/user'));
         }
         $result = $this->user_model->delete($id);
         
+        $this->session->set_flashdata('msg_success', $this->lang->line('user_has_been_deleted'));
         redirect(base_url('acp/user'));
 
     }

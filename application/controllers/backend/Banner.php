@@ -99,6 +99,7 @@ class Banner extends MY_Controller {
                     $result =$this->banner_model->insert($post);
                     if($result)
                     {
+                        $this->session->set_flashdata('msg_success', $this->lang->line('banner_has_been_created'));
                         $user_id = $this->user_model->insert_id();
                         redirect(base_url('acp/banner/show/'.$user_id));
                     }
@@ -115,6 +116,7 @@ class Banner extends MY_Controller {
         $result = $this->banner_model->get_by($id);
         if(!$result)
         {
+            $this->session->set_flashdata('msg_error', $this->lang->line('banner_not_exist'));
             redirect(base_url('acp/banner'));
         }
         $this->data['row'] = $this->banner_model->convert_data($result);
@@ -127,6 +129,7 @@ class Banner extends MY_Controller {
         $banner = $this->banner_model->get_by($id);
         if(!$banner)
         {
+            $this->session->set_flashdata('msg_error', $this->lang->line('banner_not_exist'));
             redirect(base_url('acp/banner'));
         }
         
@@ -167,6 +170,7 @@ class Banner extends MY_Controller {
                     $result =$this->banner_model->update($post);
                     if($result)
                     {
+                        $this->session->set_flashdata('msg_success', $this->lang->line('banner_has_been_updated'));
                         redirect(base_url('acp/banner/show/'.$id));
                     }
                 }
@@ -185,10 +189,12 @@ class Banner extends MY_Controller {
         $user = $this->banner_model->get_by($id);
         if(!$user)
         {
+            $this->session->set_flashdata('msg_error', $this->lang->line('banner_not_exist'));
             redirect(base_url('acp/banner'));
         }
         $result = $this->banner_model->delete($id);
         
+        $this->session->set_flashdata('msg_success', $this->lang->line('banner_has_been_deleted'));
         redirect(base_url('acp/banner'));
 
     }
