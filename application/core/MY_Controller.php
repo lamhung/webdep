@@ -21,6 +21,7 @@ class MY_Controller extends CI_Controller
         
         if($this->uri->segment(1) == 'acp') {
             $this->lang->load('backend');
+            $this->user_model->backend_is_login();
         } else {
             $this->lang->load('frontend');
         }
