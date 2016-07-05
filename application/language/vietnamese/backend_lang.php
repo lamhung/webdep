@@ -110,6 +110,23 @@ $lang['news_has_been_deleted'] = 'tin tức đã bị xóa!';
 $lang['news_has_been_created'] = 'Tin tức đã được tạo!';
 $lang['news_not_exist'] = 'Tin tức không tồn tại trong hệ thống!';
 
+//Category_group
+$lang['category_group'] = 'Nhóm Danh Mục';
+$lang['category_group_id'] = 'ID Nhóm danh mục';
+$lang['category_group_name'] = 'Tiêu đề';
+$lang['category_group_url'] = 'Url';
+$lang['category_group_ordinal'] = 'Thứ tự';
+$lang['category_group_list'] = 'Danh sách nhóm danh mục';
+$lang['category_group_add'] = 'Thêm nhóm danh mục';
+$lang['category_group_edit'] = 'Cập nhật nhóm danh mục';
+$lang['category_group_delete'] = 'Xóa nhóm danh mục';
+$lang['category_group_info'] = 'Thông tin nhóm danh mục';
+$lang['category_group_has_been_updated'] = 'Nhóm danh mục đã được cập nhật!';
+$lang['category_group_has_been_deleted'] = 'nhóm danh mục đã bị xóa!';
+$lang['category_group_has_been_created'] = 'Nhóm danh mục đã được tạo!';
+$lang['category_group_not_exist'] = 'Nhóm danh mục không tồn tại trong hệ thống!';
+$lang['category_group_select'] = 'Vui lòng chọn nhóm danh mục!';
+
 //Category
 $lang['category'] = 'Danh Mục';
 $lang['category_id'] = 'ID Category';
