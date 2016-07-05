@@ -11,7 +11,8 @@ class Category_model extends MY_Model {
             'id' => NULL,
             'name' => '',
             'url' => '',
-            'ordinal' => ''
+            'ordinal' => '',
+            'category_group_id' => ''
             
         );
     }

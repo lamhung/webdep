@@ -60,13 +60,25 @@ $route['acp/news/search'] = 'backend/news/search';
 $route['acp/news/search/page'] = 'backend/news/search';
 $route['acp/news/search/page/(:num)'] = 'backend/news/search';
 
+//Category_group
+$route['acp/category_group'] = 'backend/category_group';
+$route['acp/category_group/page'] = 'backend/category_group';
+$route['acp/category_group/page/(:num)'] = 'backend/category_group';
+$route['acp/category_group/add'] = 'backend/category_group/add';
+$route['acp/category_group/show/(:num)'] = 'backend/category_group/show/$1';
+$route['acp/category_group/edit/(:num)'] = 'backend/category_group/edit/$1';
+$route['acp/category_group/delete/(:num)'] = 'backend/category_group/delete/$1';
+$route['acp/category_group/search'] = 'backend/category_group/search';
+$route['acp/category_group/search/page'] = 'backend/category_group/search';
+$route['acp/category_group/search/page/(:num)'] = 'backend/category_group/search';
+
 //Category
 $route['acp/category'] = 'backend/category';
 $route['acp/category/page'] = 'backend/category';
 $route['acp/category/page/(:num)'] = 'backend/category';
 $route['acp/category/add'] = 'backend/category/add';
 $route['acp/category/show/(:num)'] = 'backend/category/show/$1';
-$route['acp/category/edit/(:num)'] = 'backend/category/edit/$1';
+$route['acp/category/edit/(:num)'] = 'backend/v/edit/$1';
 $route['acp/category/delete/(:num)'] = 'backend/category/delete/$1';
 $route['acp/category/search'] = 'backend/category/search';
 $route['acp/category/search/page'] = 'backend/category/search';

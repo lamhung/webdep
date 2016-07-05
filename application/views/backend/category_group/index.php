@@ -1,10 +1,10 @@
 <div class="page-title">
    <div class="row">
         <div class="col-md-11">
-            <h4><span class="glyphicon glyphicon-log-in">&nbsp;</span><?php echo $this->lang->line('category_list')?></h4>
+            <h4><span class="glyphicon glyphicon-log-in">&nbsp;</span><?php echo $this->lang->line('category_group_list')?></h4>
         </div>
         <div class="col-md-1">
-            <a href="<?php echo base_url('acp/category/add');?>" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-floppy-open">&nbsp;</span><?php echo $this->lang->line('btn_add'); ?></a>
+            <a href="<?php echo base_url('acp/category_group/add');?>" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-floppy-open">&nbsp;</span><?php echo $this->lang->line('btn_add'); ?></a>
         </div>
     </div>  
 </div>
@@ -14,8 +14,8 @@
             <thead>
                 <tr class="success">
                     <th><?php echo $this->lang->line('STT');?></th>
-                    <th><?php echo $this->lang->line('category_name');?></th>
-                    <th><?php echo $this->lang->line('category_ordinal');?></th>
+                    <th><?php echo $this->lang->line('category_group_name');?></th>
+                    <th><?php echo $this->lang->line('category_group_ordinal');?></th>
                     <th><?php echo $this->lang->line('btn_edit');?>/<?php echo $this->lang->line('btn_delete');?></th>
                 </tr>
             </thead>
@@ -30,8 +30,8 @@
                         <td><?php echo $row['name'];?></td>
                         <td><?php echo $row['ordinal'];?></td>
                         <td>
-                            <a href="<?php echo base_url('acp/category/edit/'.$row['id']);?>" class="btn btn-warning btn-xs"><?php echo $this->lang->line('btn_edit'); ?></a>
-                            <a href="<?php echo base_url('acp/category/delete/'.$row['id']);?>" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure?');"><?php echo $this->lang->line('btn_delete'); ?></a>
+                            <a href="<?php echo base_url('acp/category_group/edit/'.$row['id']);?>" class="btn btn-warning btn-xs"><?php echo $this->lang->line('btn_edit'); ?></a>
+                            <a href="<?php echo base_url('acp/category_group/delete/'.$row['id']);?>" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure?');"><?php echo $this->lang->line('btn_delete'); ?></a>
                         </td>
                     </tr>
                     <?php
