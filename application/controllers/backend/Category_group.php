@@ -99,8 +99,8 @@ class Category_group extends MY_Controller {
     
     public function delete($id = 0)
     {
-        $user = $this->category_group_model->get_by($id);
-        if(!$user)
+        $category = $this->category_group_model->get_by($id);
+        if(!$category)
         {
             $this->session->set_flashdata('msg_error', $this->lang->line('category_group_not_exist'));
             redirect(base_url('acp/category_group'));

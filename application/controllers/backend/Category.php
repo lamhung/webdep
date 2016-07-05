@@ -7,6 +7,27 @@ class Category extends MY_Controller {
         $this->data['per_page'] = 10;
     }
     
+    public function index() {
+        //Get config for pagination
+        $config = $this->pagination_mylib->bootstrap_configs();
+        $config['base_url'] = base_url('acp/category/page');
+        $config['total_rows'] = $this->category_model->count_all();
+        $config['per_page'] = $this->data['per_page'];
+        $config['uri_segment'] = 4;
+        $config['use_page_numbers'] = TRUE;
+        $this->pagination->initialize($config);
+        $conditions = array(
+            'order' => 'id DESC',
+            'limit' => $config['per_page'],
+            'offset' => $this->uri->segment(4) ? ($this->uri->segment(4) - 1)*$config['per_page'] : 0
+        );
+        $this->data['rows'] = $this->category_model->get_rows($conditions);
+        
+        $this->load->view('backend/layout/header', $this->data);
+        $this->load->view('backend/category/index', $this->data);
+        $this->load->view('backend/layout/footer', $this->data);
+    }
+    
     public function add() {
         $this->data['row'] = $this->category_model->default_value();
         
@@ -32,5 +53,68 @@ class Category extends MY_Controller {
         $this->load->view('backend/layout/header', $this->data);
         $this->load->view('backend/category/add', $this->data);
         $this->load->view('backend/layout/footer', $this->data);
+    }
+    
+    public function show($id = 0) {
+        $result = $this->category_model->get_by($id);
+        if(!$result)
+        {
+            $this->session->set_flashdata('msg_error', $this->lang->line('category_not_exist'));
+            redirect(base_url('acp/category'));
+        }
+        $this->data['row'] = $result;
+        $this->data['category_group'] = $this->category_group_model->get_by($result['category_group_id']);
+        $this->load->view('backend/layout/header', $this->data);
+        $this->load->view('backend/category/show', $this->data);
+        $this->load->view('backend/layout/footer', $this->data);
+    }
+    
+    public function edit($id = 0) {
+        $category = $this->category_model->get_by($id);
+        if(!$category)
+        {
+            $this->session->set_flashdata('msg_error', $this->lang->line('category_not_exist'));
+            redirect(base_url('acp/category'));
+        }
+        
+        if($this->input->post('submit')) {
+            $post = $this->input->post();
+            $set_name = $post['name'] == $category['name'] ? "required" : "required|is_unique[category_group.name]";
+            $this->form_validation->set_rules('category_group_id',$this->lang->line('category_group'), 'required');
+            $this->form_validation->set_rules('name',$this->lang->line('category_name'), $set_name);
+            $this->form_validation->set_rules('ordinal',$this->lang->line('category_ordinal'), 'numeric');
+            if($this->form_validation->run() === TRUE){
+                $post['url'] = $this->text_lib->clean_url($post['name']);
+                $post['ordinal'] = $post['ordinal'] ? $post['ordinal'] : $this->category_model->next_id();
+                $post['id'] = $id;
+                $result =$this->category_model->update($post);
+                if($result)
+                {
+                    $this->session->set_flashdata('msg_success', $this->lang->line('category_has_been_updated'));
+                    redirect(base_url('acp/category/show/'.$id));
+                }
+            }  
+        }
+        
+        $this->data['row'] = $this->category_model->get_by($category);
+        $this->data['category_groups'] = $this->category_group_model->get_rows(array('order_by' => 'id'));
+        $this->load->view('backend/layout/header', $this->data);
+        $this->load->view('backend/category/edit', $this->data);
+        $this->load->view('backend/layout/footer', $this->data);
+    }
+    
+    public function delete($id = 0)
+    {
+        $category = $this->category_model->get_by($id);
+        if(!$category)
+        {
+            $this->session->set_flashdata('msg_error', $this->lang->line('category_not_exist'));
+            redirect(base_url('acp/category'));
+        }
+        $result = $this->category_model->delete($id);
+        
+        $this->session->set_flashdata('msg_error', $this->lang->line('category_has_been_deleted'));
+        redirect(base_url('acp/category'));
+
     }
 }
