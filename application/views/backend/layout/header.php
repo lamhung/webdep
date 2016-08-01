@@ -4,7 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>CMS -> Trang chủ</title>
         <link href="<?php echo base_url('assets/backend/css/style.css'); ?>" rel="stylesheet"/>
-        <link href="<?php echo base_url('vendor/bootstrap/css/bootstrap.min.css'); ?>" rel="stylesheet" type="text/css" />
+        <link href="<?php echo base_url('vendor/bootstrap/css/bootstrap.css'); ?>" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url('vendor/bootstrap/css/bootstrap-theme.min.css'); ?>" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url('vendor/bootstrap/css/bootstrap-toggle.min.css'); ?>" rel="stylesheet"/>
         <link href="<?php echo base_url('vendor/jquery/ui/jquery-ui.min.css'); ?>" rel="stylesheet"/>
@@ -67,11 +67,29 @@
                                 <li><a href="<?php echo base_url('acp/banner');?>"><?php echo $this->lang->line('banner_list');?></a></li>
                             </ul>
                         </li>
-                        <li>
+                        <li class="dropdown">
                             <a href="<?php echo base_url('acp/product');?>" data-toggle = 'dropdown'><span class="glyphicon glyphicon-folder-close">&nbsp;</span>Product<span class="caret">&nbsp;</span></a>
                             <ul class="dropdown-menu">
-                                <li>
-                                    <a href="<?php echo base_url('acp/category');?>"><?php echo $this->lang->line('category');?></a>
+                                <li class="dropdown-submenu">
+                                    <a  class="menu_sub" tabindex="-1" href="<?php echo base_url('acp/category_group');?>"><?php echo $this->lang->line('category_group');?><span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a tabindex="-1" href="<?php echo base_url('acp/category_group');?>"><?php echo $this->lang->line('category_group_list');?></a></li>
+                                        <li><a tabindex="-1" href="<?php echo base_url('acp/category_group/add');?>"><?php echo $this->lang->line('category_group_add');?></a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a  class="menu_sub" tabindex="-1" href="<?php echo base_url('acp/category');?>"><?php echo $this->lang->line('category');?><span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a tabindex="-1" href="<?php echo base_url('acp/category');?>"><?php echo $this->lang->line('category_list');?></a></li>
+                                        <li><a tabindex="-1" href="<?php echo base_url('acp/category/add');?>"><?php echo $this->lang->line('category_add');?></a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a  class="menu_sub" tabindex="-1" href="<?php echo base_url('acp/product');?>"><?php echo $this->lang->line('product');?><span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a tabindex="-1" href="<?php echo base_url('acp/product');?>"><?php echo $this->lang->line('product_list');?></a></li>
+                                        <li><a tabindex="-1" href="<?php echo base_url('acp/product/add');?>"><?php echo $this->lang->line('product_add');?></a></li>
+                                    </ul>
                                 </li>
                             </ul>
                         
@@ -102,3 +120,12 @@
             <div class="wrapper">
                 <?php $this->load->view('backend/layout/_flash');?>
 
+<script>
+$(document).ready(function(){
+  $('.dropdown-submenu a.menu_sub').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+</script>

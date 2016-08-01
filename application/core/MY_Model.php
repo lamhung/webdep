@@ -98,6 +98,12 @@ class MY_Model extends CI_Model {
                 show_error("Method: get_row() CRUD : Param LIMIT must be NUMBER!");
             }
         }
+        
+        if(isset($input['where'])) {
+            if(is_string($input['where']) && $input['where']) {
+                $this->db->where($input['where']);
+            }
+        }
         //Get DaTa
         $query = $this->db->get($this->table);
         return $query->result_array();

@@ -142,3 +142,25 @@ $lang['category_has_been_updated'] = 'Danh mục đã được cập nhật!';
 $lang['category_has_been_deleted'] = 'Danh mục đã bị xóa!';
 $lang['category_has_been_created'] = 'Danh mục đã được tạo!';
 $lang['category_not_exist'] = 'Danh mục không tồn tại trong hệ thống!';
+
+//product
+$lang['product_id'] = 'ID Sản phẩm';
+$lang['product'] = "Sản Phẩm";
+$lang['product_title'] = 'Tiêu đề sản phẩm';
+$lang['product_url'] = 'Url';
+$lang['product_title'] = 'Tiêu đề sản phẩm';
+$lang['product_link_web'] = 'Liên kết';
+$lang['product_image'] = 'Hình đại diện';
+$lang['product_description'] = 'Mô tả ngắn';
+$lang['product_content'] = 'Nội dung';
+$lang['product_create_at'] = 'Thời gian tạo';
+$lang['product_user_id'] = 'Người Đăng';
+$lang['product_list'] = 'Danh sách sản phẩm';
+$lang['product_add'] = 'Thêm sản phẩm';
+$lang['product_edit'] = 'Cập nhật sản phẩm';
+$lang['product_delete'] = 'Xóa sản phẩm';
+$lang['product_info'] = 'Thông tin sản phẩm';
+$lang['product_has_been_updated'] = 'Sản phẩm đã được cập nhật!';
+$lang['product_has_been_deleted'] = 'Sản phẩm đã bị xóa!';
+$lang['product_has_been_created'] = 'Sản phẩm đã được tạo!';
+$lang['product_not_exist'] = 'Sản phẩm không tồn tại trong hệ thống!';
