@@ -22,7 +22,7 @@ class Banner_model extends MY_Model
             'posted_date_' => '',
             'expiration_date_' => '',
             'position_place' => '',
-            'image_' => base_url('assets/backend/img/icons/no_avatar_256x256.png')
+            'image_' => base_url('assets/backend/img/icons/clipping_pictures.png')
         );
     }
     

@@ -84,6 +84,25 @@ $route['acp/category/search'] = 'backend/category/search';
 $route['acp/category/search/page'] = 'backend/category/search';
 $route['acp/category/search/page/(:num)'] = 'backend/category/search';
 
+//Product
+$route['acp/product'] = 'backend/product';
+$route['acp/product/page'] = 'backend/product';
+$route['acp/product/page/(:num)'] = 'backend/product';
+$route['acp/product/add'] = 'backend/product/add';
+$route['acp/product/show/(:num)'] = 'backend/product/show/$1';
+$route['acp/product/edit/(:num)'] = 'backend/product/edit/$1';
+$route['acp/product/delete/(:num)'] = 'backend/product/delete/$1';
+$route['acp/product/search'] = 'backend/product/search';
+$route['acp/product/search/page'] = 'backend/product/search';
+$route['acp/product/search/page/(:num)'] = 'backend/product/search';
+$route['acp/product/ajax_get_category'] = 'backend/product/ajax_get_category';
+$route['acp/product/ajax_filter_product'] = 'backend/product/ajax_filter_product';
+
+//Image
+$route['acp/image'] = 'backend/image';
+$route['acp/image/delete/(:num)'] = 'backend/image/delete/$1';
+$route['acp/image/ajax_deleteImage'] = 'backend/image/ajax_deleteImage';
+
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

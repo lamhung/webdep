@@ -58,7 +58,34 @@ class Image_mylib {
         }
         return $result;
     }
-
+    
+    
+    /**
+    * Upload multi image
+    * @param    input file, directory, array
+    * @return	array
+    */
+    public function upload_multi($input_name, $directory, $image = array(), $thumbnail = array())
+    {
+        $result = array();
+        if($_SERVER['REQUEST_METHOD'] == 'POST')
+        {
+            $files = $_FILES;
+           
+            $cpt = count($_FILES[$input_name]['name']);
+            for($i=0; $i<$cpt; $i++)
+            {           
+                $_FILES[$input_name]['name']= $files[$input_name]['name'][$i];
+                $_FILES[$input_name]['type']= $files[$input_name]['type'][$i];
+                $_FILES[$input_name]['tmp_name']= $files[$input_name]['tmp_name'][$i];
+                $_FILES[$input_name]['error']= $files[$input_name]['error'][$i];
+                $_FILES[$input_name]['size']= $files[$input_name]['size'][$i];    
+                
+                $result[] = $this->upload_one($input_name, $directory, $image, $thumbnail);
+            }
+        }
+        return $result;
+    }
     /**
      * Creat thumbnail
      * @param    input file, directory, array

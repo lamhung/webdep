@@ -30,7 +30,9 @@ body{font-size:12px;font-family:Arial, Helvetica, sans-serif;color:#666;backgrou
 .wrapper {width: 100%;min-height:500px;padding:15px; background:#FFF; border: 1px solid #cccccc;border-radius: 5px;}
 .page-title {margin-bottom: 20px; border-bottom: 1px solid #e6e5e5;}
 
-
+/* sub menu*/
+.dropdown-submenu {position: relative;}
+.dropdown-submenu .dropdown-menu {top: 0;left: 100%;margin-top: -1px;}
 
 /*footer*/
 .text_link{float:left;width:100%;}
